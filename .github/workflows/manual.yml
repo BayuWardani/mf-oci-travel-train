@@ -13,9 +13,9 @@ jobs:
         - run: npm ci
         - run: npm run build --if-present
         - name: upload to s3
-          uses: Noelware/s3-action@2
+          uses: noelware/s3-action@v1.2.0
           with:
-              directories: ./dist/*
+              directories: ./dist
               access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
               path-format: '/$(tag)'
               secret-key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
