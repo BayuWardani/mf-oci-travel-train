@@ -18,6 +18,6 @@ jobs:
             aws_key_id: $AWS_ACCESS_KEY_ID
             aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
             aws_bucket: $AWS_STORAGE_BUCKET_NAME
-            source_dir: spa
+            source_dir: ./dist
             destination_dir: /
             endpoint: $AWS_S3_ENDPOINT_URL
