@@ -25,8 +25,7 @@ jobs:
             aws s3 sync ./dist/ s3://bayuwrdani/train/$(git rev-parse --short "$GITHUB_SHA") --delete --acl public-read
          
         - name: comment to pr
-          uses: github-actions-up-and-running/pr-comment@v1.0.1
+        - uses: mshick/add-pr-comment@v2
           with:
-            repo-token: ${{ secrets.GITHUB_TOKEN }}
             message: 'Untuk melakukan testing data pr ini bisa menggunakan link berikut https://spa.bayuwardani.my.id/dev.html?appName=@oci/travel-train&appUrl=https://bayuwrdani.s3.ap-southeast-2.amazonaws.com/train/$(git rev-parse --short "$GITHUB_SHA")/oci-travel-train.js'
              
