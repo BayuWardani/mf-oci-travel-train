@@ -28,5 +28,5 @@ jobs:
         - name: comment to pr
           uses: mshick/add-pr-comment@v2
           with:
-            message: ${{ format('Untuk melakukan testing data pr ini bisa menggunakan link berikut https://spa.bayuwardani.my.id/dev.html?appName=@oci/travel-train&appUrl=https://bayuwrdani.s3.ap-southeast-2.amazonaws.com/train/{0}/oci-travel-train.js', git rev-parse --short "$GITHUB_SHA"}}
+            message: Untuk melakukan testing data pr ini bisa menggunakan link berikut https://spa.bayuwardani.my.id/dev.html?appName=@oci/travel-train&appUrl=https://bayuwrdani.s3.ap-southeast-2.amazonaws.com/train/$(git rev-parse --short "$GITHUB_SHA")/oci-travel-train.js
              
