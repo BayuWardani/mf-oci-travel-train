@@ -10,13 +10,5 @@ module.exports = (webpackConfigEnv, argv) => {
   });
 
   return merge(defaultConfig, {
-    module:{
-      rules:[
-        {
-          test: /\.(css)$/,
-          use: ['style-loader', 'css-loader']
-        }
-      ]
-    }
   });
 };

@@ -58,7 +58,7 @@
     "single-spa": "^5.9.3",
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9",
-    "@oci-lib/ui":"../mf-oci-ui-component-lib"
+    "@oci-lib/ui": "github:BayuWardani/mf-oci-ui-component-lib#v1.0.1"
   },
   "types": "dist/oci-travel-train.d.ts"
 }
