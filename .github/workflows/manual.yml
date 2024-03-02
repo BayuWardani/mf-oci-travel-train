@@ -22,5 +22,5 @@ jobs:
   
         - name: Upload files to S3 with AWS CLI
           run: |
-            aws s3 sync _train/ s3://bayuwrdani --delete 
+            aws s3 sync ./dist/ s3://bayuwrdani --delete 
         
