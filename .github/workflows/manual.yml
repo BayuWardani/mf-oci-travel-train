@@ -12,7 +12,7 @@ jobs:
           env:
             SUPER_SECRET: ${{ secrets.AWS_ACCESS_KEY_ID }}
           run: |
-            example-command "$SUPER_SECRET"
+            echo "$SUPER_SECRET"
         - name: build
           uses: actions/setup-node@v4.0.2
         - run: npm ci
