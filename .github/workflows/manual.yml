@@ -6,6 +6,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: dev
+    permissions: write-all
     steps:
         - name: Checkout
           uses: actions/checkout@v4
