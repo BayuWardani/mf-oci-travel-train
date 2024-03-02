@@ -8,7 +8,7 @@ export default function Root(props) {
     <div className='d-flex align-item-center justify-content-center mt-4'>
       <div className='col-md-4'>
         <Card title="Peringatan">
-          <p>Pesan yang masuk sini adalah v4 : <strong>Hello MF Train</strong></p>
+          <p>Pesan yang masuk sini adalah v47 : <strong>Hello MF Train</strong></p>
           <small>
             <a href='/'>Dashboard</a>
           </small>
