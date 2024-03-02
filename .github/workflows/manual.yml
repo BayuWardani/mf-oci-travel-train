@@ -13,11 +13,13 @@ jobs:
         - run: npm ci
         - run: npm run build --if-present
         - name: upload to s3
-          uses: shallwefootball/upload-s3-action@v1.3.3
+          uses: Noelware/s3-action@2
           with:
-            aws_key_id: $AWS_ACCESS_KEY_ID
-            aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
-            aws_bucket: $AWS_STORAGE_BUCKET_NAME
-            source_dir: ./dist
-            destination_dir: /
-            endpoint: $AWS_S3_ENDPOINT_URL
+              directories: ./dist/*
+              access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+              path-format: '/$(tag)'
+              secret-key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+              endpoint:  ${{secrets.AWS_S3_ENDPOINT_URL}}
+              prefix: /artifacts
+              region: idn
+              bucket: ${{ secrets.AWS_STORAGE_BUCKET_NAME }}
