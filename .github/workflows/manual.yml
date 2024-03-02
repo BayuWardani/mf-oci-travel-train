@@ -23,7 +23,7 @@ jobs:
   
         - name: Upload files to S3 with AWS CLI
           run: |
-            aws s3 sync ./dist/ s3://bayuwrdani/train/${{$GITHUB_SHA}} --delete --acl public-read
+            aws s3 sync ./dist/ s3://bayuwrdani/train/${{GITHUB_SHA}} --delete --acl public-read
          
         - name: comment to pr
           uses: mshick/add-pr-comment@v2
