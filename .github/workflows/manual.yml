@@ -25,7 +25,7 @@ jobs:
           run: |
             aws s3 sync ./dist/ s3://bayuwrdani/train/${GITHUB_SHA} --delete --acl public-read
         - name: "Generate URL"
-          run: echo "Untuk melakukan testing data pr ini bisa menggunakan link berikut https://spa.bayuwardani.my.id/dev.html?appName=@oci/travel-train&appUrl=https://bayuwrdani.s3.ap-southeast-2.amazonaws.com/train/${GITHUB_SHA}/oci-travel-train.js" >> $PR_COMMENT
+          run: echo "PR_COMMENT=Untuk melakukan testing data pr ini bisa menggunakan link berikut https://spa.bayuwardani.my.id/dev.html?appName=@oci/travel-train&appUrl=https://bayuwrdani.s3.ap-southeast-2.amazonaws.com/train/${GITHUB_SHA}/oci-travel-train.js" >> $GITHUB_ENV
 
         - name: "comment"
           uses: github-actions-up-and-running/pr-comment@v1.0.1
@@ -33,5 +33,5 @@ jobs:
             # GITHUB_TOKEN secret
             repo-token: ${{secrets.GITHUB_TOKEN}}
             # Message to comment
-            message: $PR_COMMENT
+            message: ${{ env.PR_COMMENT }}
 
