@@ -1,0 +1,23 @@
+name: Run tests
+
+on: [pull_request]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: build
+          uses: actions/setup-node@v4.0.2
+        - run: npm ci
+        - run: npm run build --if-present
+        - name: upload to s3
+          uses: shallwefootball/upload-s3-action@v1.3.3
+          with:
+            aws_key_id: $AWS_ACCESS_KEY_ID
+            aws_secret_access_key: $AWS_SECRET_ACCESS_KEY
+            aws_bucket: $AWS_STORAGE_BUCKET_NAME
+            source_dir: spa
+            destination_dir: /
+            endpoint: $AWS_S3_ENDPOINT_URL
